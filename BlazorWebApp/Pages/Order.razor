@@ -1,0 +1,66 @@
+@page "/order/{id:int}"
+@using System.Text.Json
+@inject HttpClient http
+
+
+<EditForm Model="order" OnValidSubmit="HandleValidSubmit">
+
+    <div class="mb-3">
+        <label for="id">ID</label>
+        <input id="id" class="form-control" value="@productModel.Id" />
+    </div>
+    <div class="mb-3">
+        <label for="name">Product Name</label>
+        <input id="name" class="form-control" value="@productModel.Name" />
+    </div>
+    <div class="mb-3">
+        <label for="name">Quantity</label>
+        <input id="Quantity" class="form-control" @bind="@order.Quantity" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="alert alert-success">
+        @res
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int id { get; set; } = 1;
+    public ProductModel productModel { get; set; } = new ProductModel();
+    public OrderModel order = new OrderModel();
+    public string res { get; set; } = "";
+    public async Task HandleValidSubmit()
+    {
+        //{"UserId":1,"ProductId":0,"Quantity":1,"Price":0}
+        //Gọi api post đưa dữ liệu về api order
+        order.ProductId = id;
+        order.Price = productModel.Price;
+        Console.WriteLine(JsonSerializer.Serialize(order));
+        //Gọi api order
+        try
+        {
+            var response = await http.PostAsJsonAsync("http://localhost:5084/api/Product/addOrder", order);
+            response.EnsureSuccessStatusCode();
+
+            string? res = await response.Content.ReadFromJsonAsync<string>();
+            Console.WriteLine(res);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"POST failed: {ex.Message}");
+        }
+
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        // Gọi API ở đây nếu cần
+        var data = await http.GetFromJsonAsync<ProductModel>($@"http://localhost:5291/api/Product/GetProductById/{id}");
+        productModel = data;
+    }
+    public void Dispose()
+    {
+        // Cleanup nếu cần
+        // StateService.OnChange -= StateHasChanged;
+    }
+}

@@ -1,0 +1,42 @@
+﻿@page "/"
+@using System.Text.Json
+@inject HttpClient Http
+<PageTitle>Index</PageTitle>
+<div class="container">
+    <h3>Danh sách sản phẩm</h3>
+    <div class="row">
+        @foreach (ProductModel item in data)
+        {
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://i.pravatar.cc?u=@item.Id" alt="1" />
+                    <div class="card-body">
+                        <div class="card-title">@item.Name</div>
+                        <div class="card-text">@item.Price</div>
+                        <a class="btn btn-dark" href="/order/@item.Id">Đặt hàng</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+@code {
+    List<ProductModel> data = new List<ProductModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Gọi API ở đây nếu cần
+        data = await Http.GetFromJsonAsync<List<ProductModel>>("http://localhost:5291/api/Product/GetAllProduct");
+        Console.WriteLine(JsonSerializer.Serialize(data));
+        // Nếu có dùng state service:
+        // StateService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        // Cleanup nếu cần
+        // StateService.OnChange -= StateHasChanged;
+    }
+    
+}
