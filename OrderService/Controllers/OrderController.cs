@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
+using Confluent.Kafka;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OrderService.Kafka;
 using OrderService.Models;
 using OrderService.ViewModel;
 //using ProductService.Models;
@@ -12,7 +15,7 @@ namespace OrderService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController(OrderDbServiceContext _context) : ControllerBase
+    public class OrderController(OrderDbServiceContext _context,IKafkaProducer _producer) : ControllerBase
     {
 
         [HttpGet("GetAllOrder")]
@@ -45,7 +48,17 @@ namespace OrderService.Controllers
                 _context.OrderItems.Add(detail);
                 _context.SaveChanges();
                 //Cấu hình kafka đưa dữ liệu lên topic
-                
+                var orderDetail = new {
+                    Id = detail.Id,
+                    orderDetail = model.Id,
+                    ProductId = order.ProductId,
+                    Quantity = order.Quantity,
+                    UnitPrice = order.Price,
+                };
+                await _producer.ProduceAsync("order-topic", new Message<string,string>(){
+                    Key = model.Id.ToString(),
+                    Value = JsonSerializer.Serialize(orderDetail)
+                });
 
                 
                 _context.Database.CommitTransaction();

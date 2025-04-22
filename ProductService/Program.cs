@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ProductService.Kafka;
 using ProductService.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,15 +27,22 @@ builder.Services.AddCors(options =>
     });
 });
 
+//Chạy background service lắng nghe sự thay đổi topic trên kafka
+// builder.Services.AddHostedService<KafkaConsumer>();
+
+
+builder.WebHost.UseUrls("http://*:80");
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 app.UseCors("allow_all");
 app.MapControllers();
 app.UseHttpsRedirection();
+app.Urls.Add("http://*:80");
+
+
 app.Run();
 

@@ -75,3 +75,5 @@
 /Volumes/Cybersoft/DotNet01/mc_Shop_final/AppHost/obj/Debug/net8.0/AppHost.pdb
 /Volumes/Cybersoft/DotNet01/mc_Shop_final/AppHost/obj/Debug/net8.0/AppHost.genruntimeconfig.cache
 /Volumes/Cybersoft/DotNet01/mc_Shop_final/AppHost/obj/Debug/net8.0/ref/AppHost.dll
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/AppHost/obj/Debug/net8.0/AppHost.sourcelink.json
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/AppHost/obj/Debug/net8.0/Aspire/references/GateWayService.ProjectMetadata.g.cs

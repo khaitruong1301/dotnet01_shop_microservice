@@ -24,10 +24,9 @@ namespace ProductService.Controllers
         [HttpGet("GetProductById/{id}")]
         public async Task<ActionResult> GetProductById([FromRoute] int id)
         {
-         
             return Ok(await _context.Products.FindAsync(id));
         }
-
-
     }
 }
+
+

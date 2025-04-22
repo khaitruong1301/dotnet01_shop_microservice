@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w7ra1JgRHoQ=",
+  "dgSpecHash": "yDotoehLUPM=",
   "success": true,
   "projectFilePath": "/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/BlazorWebApp.csproj",
-  "expectedPackageFiles": [
-    "/Users/khai/.nuget/packages/confluent.kafka/2.9.0/confluent.kafka.2.9.0.nupkg.sha512",
-    "/Users/khai/.nuget/packages/librdkafka.redist/2.8.0/librdkafka.redist.2.8.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

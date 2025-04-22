@@ -1,0 +1,12 @@
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.csproj.AssemblyReference.cache
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.AssemblyInfoInputs.cache
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.AssemblyInfo.cs
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.csproj.CoreCompileInputs.cache
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.MvcApplicationPartsAssemblyInfo.cache
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.RazorAssemblyInfo.cache
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.RazorAssemblyInfo.cs
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.sourcelink.json
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.dll
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/refint/BlazorWebApp.dll
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/obj/Release/net7.0/BlazorWebApp.pdb

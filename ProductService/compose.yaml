@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  productservice:
+    container_name: product_service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80" # Host:Container (cổng ngoài là 5000)
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge

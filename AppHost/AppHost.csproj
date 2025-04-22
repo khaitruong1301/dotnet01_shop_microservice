@@ -19,6 +19,7 @@
     <ProjectReference Include="..\PaymentService\PaymentService.csproj" />
     <ProjectReference Include="..\ProductService\ProductService.csproj" />
     <ProjectReference Include="..\IdentityService\IdentityService.csproj" />
+    <ProjectReference Include="..\GateWayService\GateWayService.csproj" />
   </ItemGroup>
 
 </Project>

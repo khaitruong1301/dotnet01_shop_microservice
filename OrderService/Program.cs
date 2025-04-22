@@ -1,5 +1,6 @@
 using OrderService.Models;
 using Microsoft.EntityFrameworkCore;
+using OrderService.Kafka;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("OrderDbService");
@@ -21,6 +22,10 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
     });
 });
+//Khởi tạo producerKafka
+builder.Services.AddScoped<IKafkaProducer,KafkaProducer>();
+
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

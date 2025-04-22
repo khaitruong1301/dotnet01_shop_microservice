@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "iu0ODGuoEa4XUVd7qsDmiKLbp9yWAgwbdQWTLZalmaQ=",
+  "Source": "GateWayService",
+  "BasePath": "_content/GateWayService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,7 @@
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/BlazorWebApp
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/appsettings.Development.json
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/appsettings.json
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/BlazorWebApp.dll
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/BlazorWebApp.deps.json
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/BlazorWebApp.runtimeconfig.json
+/Volumes/Cybersoft/DotNet01/mc_Shop_final/BlazorWebApp/build/BlazorWebApp.pdb
